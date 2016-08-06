@@ -23,5 +23,15 @@ RSpec.describe ApiConstraints do
       end
     end
 
+    it "sets page's status to 'parsed'" do
+      VCR.use_cassette('parse_page') do
+        page = create(:page, url: 'http://www.nokogiri.org/tutorials/installing_nokogiri.html')
+
+        ParsePageService.new.process!(page)
+
+        expect(page.status).to eq 'parsed'
+      end
+    end
+
   end
 end
