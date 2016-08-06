@@ -62,5 +62,7 @@ group :test do
   gem 'ffaker'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'database_cleaner'
+  gem 'vcr'
+  gem 'webmock'
 end
 
