@@ -25,6 +25,9 @@ RSpec.describe Api::V1::PagesController, type: :controller do
     context "when is successfully created" do
       it "renders the json representation for the page record just created" do
         @page_attributes = attributes_for :page
+        stubbed_parser = ParsePageService.new
+        allow(stubbed_parser).to receive(:process!)
+        allow(ParsePageService).to receive(:new).and_return(stubbed_parser)
 
         post :create, { page: @page_attributes }, format: :json
 
@@ -34,10 +37,24 @@ RSpec.describe Api::V1::PagesController, type: :controller do
 
       it "returns 201" do
         @page_attributes = attributes_for :page
+        stubbed_parser = ParsePageService.new
+        allow(stubbed_parser).to receive(:process!)
+        allow(ParsePageService).to receive(:new).and_return(stubbed_parser)
 
         post :create, { page: @page_attributes }, format: :json
 
         expect(response).to have_http_status(:created)
+      end
+
+      it "launch the ParsePageService" do
+        @page_attributes = attributes_for :page
+        stubbed_parser = ParsePageService.new
+        allow(stubbed_parser).to receive(:process!)
+        allow(ParsePageService).to receive(:new).and_return(stubbed_parser)
+
+        post :create, { page: @page_attributes }, format: :json
+
+        expect(stubbed_parser).to have_received(:process!)
       end
     end
 
