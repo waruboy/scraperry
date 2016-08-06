@@ -13,7 +13,6 @@ class ParsePageService
 
   private
     def save_headers!
-      puts "### headers on page"
       heads = @doc.css('h1, h2, h3').sort.map do |header|
         if header.content.blank?
           header.remove
@@ -21,7 +20,7 @@ class ParsePageService
           {tag: header.description.to_s[0..1], content: header.content.strip}
         end
       end
-      heads.each {|h| puts h}
+      heads.each {|h| Header.create(page:@page, tag: h[:tag], content: h[:content])}
 
     end
 
