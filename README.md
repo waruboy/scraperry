@@ -7,8 +7,9 @@ Scraperry is a small API application to grab headers and link's URLs from a webp
 Scraperry uses:
 
 1. Active Model Serializer for JSON generation
-2. Rails-API for backend
-3. RSpec for testing
+2. Nokogiri to parse HTML
+3. Rails-API for backend
+4. RSpec for testing
 
 ## Installation
 
