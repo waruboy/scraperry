@@ -78,7 +78,9 @@ http://localhost:3000/api/pages
 ```
 {"id":5,"url":"https://www.facebook.com","status":"requested"}
 ```
-Parsing is not done immediately, but queued on the background. You can check the results via List endpoint
+Parsing is not done immediately, but queued on the background. You can check the results via List endpoint.
+
+Only unique URL will be scraped and saved from the requested page.
 
 ## Getting Help
 
