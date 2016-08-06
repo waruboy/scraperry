@@ -7,7 +7,7 @@ RSpec.describe ApiConstraints do
       api_constraints_v1 =  ApiConstraints.new(version: 1)
 
       request = double(host: 'api.scraperry.dev',
-                       headers: {"Accept" => "application/vnd.marketplace.v1"})
+                       headers: {"Accept" => "application/vnd.scraperry.v1"})
 
       expect(api_constraints_v1.matches?(request)).to eq true
     end

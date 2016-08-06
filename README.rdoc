@@ -1,3 +1,0 @@
-Scrappery
-
-Scrape the content of website
