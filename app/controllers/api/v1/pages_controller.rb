@@ -9,7 +9,7 @@ class Api::V1::PagesController < ApplicationController
     page = Page.new(page_params)
     page.status = 'requested'
     if page.save
-      ParsePageService.new.process!(page)
+      ParsePageJob.perform_async(page.id)
       render json: page, status: :created
     else
       render json: { errors: page.errors }, status: :unprocessable_entity
