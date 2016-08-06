@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160806000749) do
+ActiveRecord::Schema.define(version: 20160806023647) do
+
+  create_table "headers", force: :cascade do |t|
+    t.text     "tag"
+    t.text     "content"
+    t.integer  "page_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "headers", ["page_id"], name: "index_headers_on_page_id"
 
   create_table "links", force: :cascade do |t|
     t.text     "url"
