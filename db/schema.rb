@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160805071241) do
+ActiveRecord::Schema.define(version: 20160806000749) do
+
+  create_table "links", force: :cascade do |t|
+    t.text     "url"
+    t.integer  "page_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "links", ["page_id"], name: "index_links_on_page_id"
 
   create_table "pages", force: :cascade do |t|
     t.text     "url"
