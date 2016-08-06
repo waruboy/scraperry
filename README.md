@@ -10,6 +10,7 @@ Scraperry uses:
 2. Nokogiri to parse HTML
 3. Rails-API for backend
 4. RSpec for testing
+5. SuckerPunch for AsyncJob
 
 ## Installation
 
@@ -75,7 +76,7 @@ http://localhost:3000/api/pages
 
 ### Response Example:
 ```
-{"id":5,"url":"https://www.facebook.com","status":"parsed","updated_at":"2016-08-06T05:58:43.230Z","headers":[{"tag":"h1","content":"Facebook"},{"tag":"h2","content":"Javascript pada browser Anda tidak diaktifkan."},{"tag":"h2","content":"Pemeriksaan Keamanan"}],"links":[{"url":"https://ar-ar.facebook.com/"},{"url":"https://de-de.facebook.com/"},{"url":"https://developers.facebook.com/?ref=pf"},{"url":"https://en-gb.facebook.com/"},{"url":"https://es-la.facebook.com/"},{"url":"https://fr-fr.facebook.com/"},{"url":"https://ja-jp.facebook.com/"},{"url":"https://jv-id.facebook.com/"},{"url":"https://ko-kr.facebook.com/"},{"url":"https://messenger.com/"},{"url":"https://ms-my.facebook.com/"},{"url":"https://pt-br.facebook.com/"},{"url":"https://www.facebook.com/"},{"url":"https://www.facebook.com/help/568137493302217"}]}
+{"id":5,"url":"https://www.facebook.com","status":"requested"}
 ```
 
 ## Getting Help
@@ -86,7 +87,6 @@ If you find a bug, feel free to report an [Issue](https://github.com/waruboy/scr
 
 Things to be added:
 
-- Move parsing to a background job
 - URL format validation in models
 - Limit argument in List endpoint to limit number web pages returned
 - Setup a live demo
