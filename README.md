@@ -78,6 +78,7 @@ http://localhost:3000/api/pages
 ```
 {"id":5,"url":"https://www.facebook.com","status":"requested"}
 ```
+Parsing is not done immediately, but queued on the background. You can check the results via List endpoint
 
 ## Getting Help
 
