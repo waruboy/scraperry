@@ -90,7 +90,6 @@ If you find a bug, feel free to report an [Issue](https://github.com/waruboy/scr
 
 Things to be added:
 
-- URL format validation in models
 - Limit argument in List endpoint to limit number of web pages returned
 - Setup a live demo
 
