@@ -57,6 +57,7 @@ group :development do
   gem 'spring'
   gem 'sqlite3'
   gem 'pry-rails'
+  gem 'rubocop', require: false
 end
 
 group :test do
