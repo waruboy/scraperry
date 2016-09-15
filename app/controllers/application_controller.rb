@@ -1,3 +1,4 @@
+# main controller class
 class ApplicationController < ActionController::API
   include ActionController::MimeResponds
 
